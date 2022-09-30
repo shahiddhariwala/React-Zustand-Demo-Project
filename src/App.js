@@ -1,6 +1,6 @@
 import "./styles.css";
 import useTodoStore from "./store/index";
-import { Button, StepIcon, TextField } from "@mui/material";
+import { Button, TextField } from "@mui/material";
 import { useState } from "react";
 
 export default function App() {

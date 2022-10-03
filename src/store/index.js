@@ -1,6 +1,6 @@
 import create from "zustand";
 
-const useTodoStore = create((set, get) => ({
+const useTodoStore = create((set) => ({
   tasks: [],
   name: "Shahid Dhariwala",
   addTask: (task) => {
@@ -9,9 +9,7 @@ const useTodoStore = create((set, get) => ({
     }));
   },
   deleteTask: (index) => {
-    const tempTasks = get().tasks;
-    tempTasks.splice(index, 1);
-    set(() => ({ tasks: tempTasks }));
+    set((state) => ({ tasks: state.tasks.filter((_, idx) => idx !== index) }));
   }
 }));
 
